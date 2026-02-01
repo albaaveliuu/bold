@@ -9,6 +9,7 @@ import Contact from './components/Contact/Contact';
 import ProjectDetail from './components/ProjectDetail/ProjectDetail';
 import Footer from './components/Footer/Footer';
 import Team from './components/Team/Team';
+import OurWork from './components/OurWork/OurWork';
 import Slogan from './components/Slogan/Slogan';
 import PrivacyPolicy from './components/Footer/PrivacyPolicy';
 import Imprint from './components/Footer/Imprint';
@@ -61,6 +62,7 @@ const App: React.FC = () => {
             <About />
             <Services />
             <Team />
+            <OurWork />
             <Contact />
             <Footer />
           </>

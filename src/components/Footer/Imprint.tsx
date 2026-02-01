@@ -46,7 +46,7 @@ const Imprint: React.FC = () => {
           <p> Advertising Studio<br />
           Mustafa Venhari <br />
           10000 Prishtinë<br />
-          Kosovo</p>
+          Kosova</p>
           <br />
          <p>
           Mittenwalder Strasse <br />

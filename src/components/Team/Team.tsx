@@ -227,6 +227,24 @@ const Team: React.FC = () => {
       image: require('../../images/lumi.png'),
       signature: require('../../images/lumisignature.png'),
       linkedin: 'https://www.linkedin.com/in/lumi-pula-597859210/'
+    },
+    {
+      name: 'Nderim Ahmeti',
+      role: 'Director of Photography',
+      description: 'With 10+ years in photo editing & 4+ behind the camera, Nderim crafts striking visuals that capture detail, emotion, and elegance. From editorial beauty to bold fashion and refined retouching, he blends creativity with technical precision in every project.',
+      image: require('../../images/nderim.png'),
+      signature: require('../../images/nderimsignature.png'),
+      linkedin: 'https://www.linkedin.com/in/nderim-ahmeti-5629b6198/',
+      behance: 'https://www.behance.net/nderimahmeti'
+    },
+    {
+      name: 'Diana Voca',
+      role: 'Social Media Manager & Concept Writer',
+      description: 'From driving the creative process to crafting captions, content calendars, and growth strategies, Diana leads photo and video shoots, brings bold ideas to life, and writes copy that connects. Her work blends strategy, creativity, and storytelling to build a strong, authentic digital presence for brands.',
+      image: require('../../images/diana.png'),
+      signature: require('../../images/dianasignature.png'),
+      linkedin: 'https://www.linkedin.com/in/diana-voca-b10028177/',
+      website: 'https://corrra.com/@Diana%20Voca'
     }
   ];
 
@@ -260,6 +278,20 @@ const Team: React.FC = () => {
                       <SocialLink href={member.instagram} target="_blank" rel="noopener noreferrer">
                         <svg viewBox="0 0 24 24">
                           <path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14h-8.027c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988h-6.466v-14.967h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zm-3.466-8.988h3.584c2.508 0 2.906-3-.312-3h-3.272v3zm3.391 3h-3.391v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/>
+                        </svg>
+                      </SocialLink>
+                    )}
+                    {(member as any).behance && (
+                      <SocialLink href={(member as any).behance} target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24">
+                          <path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14h-8.027c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988h-6.466v-14.967h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zm-3.466-8.988h3.584c2.508 0 2.906-3-.312-3h-3.272v3zm3.391 3h-3.391v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/>
+                        </svg>
+                      </SocialLink>
+                    )}
+                    {member.website && (
+                      <SocialLink href={member.website} target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24">
+                          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
                         </svg>
                       </SocialLink>
                     )}
