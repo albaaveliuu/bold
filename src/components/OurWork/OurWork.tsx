@@ -165,7 +165,7 @@ const OurWork: React.FC = () => {
             </ProjectBox>
           ))}
         </ProjectsGrid>
-        <VideoContainer id="video">
+        {/* <VideoContainer id="video">
           <VideoWrapper
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -178,7 +178,7 @@ const OurWork: React.FC = () => {
               playsInline
             />
           </VideoWrapper>
-        </VideoContainer>
+        </VideoContainer> */}
       </Container>
     </OurWorkSection>
   );
