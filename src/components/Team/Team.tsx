@@ -205,6 +205,14 @@ const Team: React.FC = () => {
       instagram: 'https://behance.net/bunapula'
     },
     {
+      name: 'Gojart Sejdiu',
+      role: 'Co-Founder & Creative Director',
+      description: 'A senior marketing and communications professional with expertise in PR, creative direction, and integrated marketing. Experienced with international organizations and brands, leading digital transformation, brand strategy, and high-impact campaigns across private and public sectors.',
+      image: require('../../images/gojartsejdiu.png'),
+      signature: require('../../images/gojartsignature.png'),
+      linkedin: 'https://www.linkedin.com/in/gojart-sejdiu-38a516114/'
+    },
+    {
       name: 'Shuki Dema',
       role: 'Chief Revenue Officer',
       image: require('../../images/shuki.png'),

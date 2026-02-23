@@ -110,6 +110,23 @@ const VideoWrapper = styled(motion.div)`
     height: auto;
     display: block;
   }
+  
+  .youtube-embed {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
 `;
 
 const OurWork: React.FC = () => {
@@ -165,20 +182,23 @@ const OurWork: React.FC = () => {
             </ProjectBox>
           ))}
         </ProjectsGrid>
-        {/* <VideoContainer id="video">
+        <VideoContainer id="video">
           <VideoWrapper
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <video
-              src={require('../../videos/burrnesha.mp4')}
-              controls
-              loop
-              playsInline
-            />
+            <div className="youtube-embed">
+              <iframe
+                src="https://www.youtube.com/embed/AyDINrNHrUI"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
           </VideoWrapper>
-        </VideoContainer> */}
+        </VideoContainer>
       </Container>
     </OurWorkSection>
   );
