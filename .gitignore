@@ -41,3 +41,4 @@ src/images/**/*.mov
 # Cache files
 node_modules/.cache/
 .cache/
+.vercel
