@@ -29,10 +29,10 @@ import headerImage19 from '../../images/header/Artboard19.png';
 /** Mobile: skip scroll-triggered opacity so all three slogan lines stay visible */
 function useIsMobileSlogan() {
   const [isMobile, setIsMobile] = useState(() =>
-    typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches
+    typeof window !== 'undefined' && window.matchMedia('(max-width: 1024px)').matches
   );
   useEffect(() => {
-    const mq = window.matchMedia('(max-width: 768px)');
+    const mq = window.matchMedia('(max-width: 1024px)');
     const sync = () => setIsMobile(mq.matches);
     sync();
     mq.addEventListener('change', sync);
@@ -43,13 +43,17 @@ function useIsMobileSlogan() {
 
 const HeroSection = styled.section`
   height: 100vh;
+  height: 100dvh;
+  min-height: -webkit-fill-available;
   width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
   position: relative;
   overflow: hidden;
   background-color: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  box-sizing: border-box;
 `;
 
 const HeroContent = styled.div`
@@ -81,7 +85,7 @@ const HeroText = styled(motion.div)`
   align-items: center;
   justify-content: center;
   
-  @media (min-width: 769px) {
+  @media (min-width: 1025px) {
     transform: translate(calc(-50% + 20px), -50%);
   }
   
@@ -91,7 +95,7 @@ const HeroText = styled(motion.div)`
     margin-bottom: 20px;
     text-align: center;
     
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       font-size: 36px;
     }
   }
@@ -101,7 +105,7 @@ const HeroText = styled(motion.div)`
     opacity: 0.8;
     text-align: center;
     
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       font-size: 16px;
     }
   }
@@ -109,21 +113,28 @@ const HeroText = styled(motion.div)`
 
 const HeroImageContainer = styled.div`
   width: 100%;
+  min-width: 100%;
   height: 100vh;
+  height: 100dvh;
+  min-height: -webkit-fill-available;
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   overflow: hidden;
   z-index: 1;
+  box-sizing: border-box;
 `;
 
 const HeroImage = styled(motion.img)`
+  display: block;
   width: 100%;
   height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  max-width: none;
   object-fit: cover;
+  object-position: center center;
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
 `;
 
 const ScrollIndicator = styled(motion.div)`
@@ -165,7 +176,7 @@ const SloganSection = styled.section`
   overflow: hidden;
   padding: 0 40px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     height: auto;
     min-height: min-content;
     padding: 36px 16px 72px;
@@ -182,7 +193,7 @@ const BackgroundSlogan = styled(motion.img)`
   filter: brightness(0) invert(1);
   opacity: 0.05;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 250%;
     opacity: 0.03;
   }
@@ -197,7 +208,7 @@ const SloganText = styled(motion.div)`
   flex-direction: column;
   gap: 10px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     gap: 10px;
     text-align: center;
     align-items: stretch;
@@ -223,23 +234,24 @@ const Word = styled(motion.span)`
     font-size: 32px;
   }
 
-  @media (max-width: 768px) {
-    font-size: 13px;
+  /* Fluid type: phone stays readable; tablet (~900px) is not stuck at 13px */
+  @media (max-width: 1024px) {
+    font-size: clamp(12px, 0.2rem + 1.75vw, 24px);
     margin-right: 3px;
     line-height: 1.4;
 
     &.bold {
-      font-size: 13px;
+      font-size: clamp(12px, 0.25rem + 1.85vw, 24px);
       font-weight: 700;
     }
   }
 
   @media (max-width: 480px) {
-    font-size: 12px;
+    font-size: clamp(11px, 0.15rem + 2.8vw, 15px);
     margin-right: 2px;
 
     &.bold {
-      font-size: 12px;
+      font-size: clamp(11px, 0.2rem + 2.8vw, 15px);
       font-weight: 700;
     }
   }
@@ -262,19 +274,19 @@ const TextLine = styled(motion.div)`
       font-size: 27px;
       font-weight: 400;
 
-      @media (max-width: 768px) {
-        font-size: 13px;
+      @media (max-width: 1024px) {
+        font-size: clamp(12px, 0.2rem + 1.75vw, 24px);
         font-weight: 400;
       }
 
       @media (max-width: 480px) {
-        font-size: 12px;
+        font-size: clamp(11px, 0.15rem + 2.8vw, 15px);
       }
     }
   }
 
-  @media (max-width: 768px) {
-    font-size: 13px;
+  @media (max-width: 1024px) {
+    font-size: clamp(12px, 0.2rem + 1.75vw, 24px);
     line-height: 1.4;
     gap: 6px;
     margin-bottom: 6px;
@@ -284,7 +296,7 @@ const TextLine = styled(motion.div)`
   }
 
   @media (max-width: 480px) {
-    font-size: 12px;
+    font-size: clamp(11px, 0.15rem + 2.8vw, 15px);
   }
 `;
 
@@ -294,7 +306,7 @@ const Letter = styled(motion.span)`
   transform: translateY(20px);
   font-family: 'Syne', sans-serif;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     font-size: 28px;
     transform: translateY(10px);
   }

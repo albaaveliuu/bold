@@ -13,7 +13,7 @@ const ContactSection = styled.section`
   font-family: 'Hando', sans-serif;
   margin-left: 55px;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     margin-left: 20px;
   }
 `;
@@ -28,7 +28,7 @@ const SectionTitleContainer = styled.div`
   margin-bottom: 60px;
   justify-content: flex-start;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     padding: 0 20px;
   }
 `;
@@ -45,7 +45,7 @@ const SectionTitle = styled.h2`
   color: #FFFFFF;
   text-align: left;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     font-size: 60px;
   }
   
@@ -63,7 +63,7 @@ const ContactContainer = styled.div`
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     grid-template-columns: 1fr;
   }
 `;
@@ -75,7 +75,7 @@ const FormSection = styled.div`
   flex-direction: column;
   align-items: flex-start;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     padding: 20px 15px;
   }
 `;
@@ -87,7 +87,7 @@ const FormTitle = styled.div`
   justify-content: center;
   margin-right: -100px;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     margin-right: 0;
   }
   
@@ -111,7 +111,7 @@ const CollaborateText = styled.h4`
   margin-right: -100px;
   font-family: 'Hando', sans-serif;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     margin-right: 0;
   }
 `;
@@ -226,7 +226,7 @@ const SloganImage = styled.img`
   margin-bottom: -30px;
   padding-top: 30px;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     max-width: 100%;
   }
 `;

@@ -9,7 +9,7 @@ const FooterSection = styled.footer`
   position: relative;
   overflow: hidden;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     padding: 40px 0;
   }
 
@@ -40,7 +40,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
     gap: 40px;
     padding: 0 20px;
@@ -54,7 +54,7 @@ const LeftColumn = styled.div`
   flex-direction: column;
   gap: 40px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     align-items: center;
     gap: 30px;
   }
@@ -66,7 +66,7 @@ const RightColumn = styled.div`
   align-items: flex-end;
   gap: 40px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     align-items: center;
     gap: 30px;
   }
@@ -79,7 +79,7 @@ const Logo = styled(BoldLogo)`
     fill: #FFFFFF;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 50px;
   }
 `;
@@ -88,7 +88,7 @@ const LinkGroup = styled.div`
   display: flex;
   gap: 20px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
@@ -107,7 +107,7 @@ const FooterLink = styled(Link)`
     opacity: 1;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     font-size: 13px;
   }
 `;
@@ -124,7 +124,7 @@ const ExternalLink = styled.a`
     opacity: 1;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     font-size: 13px;
   }
 `;
@@ -135,7 +135,7 @@ const Copyright = styled.div`
   font-family: 'Syne', sans-serif;
   opacity: 0.6;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     font-size: 13px;
     order: 2;
   }

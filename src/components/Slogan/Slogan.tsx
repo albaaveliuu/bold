@@ -25,7 +25,7 @@ const Line1 = styled.h2`
   margin: 0;
   line-height: 1.2;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     font-size: 36px;
   }
 `;
@@ -37,7 +37,7 @@ const Line2 = styled.h2`
   margin: 0;
   line-height: 1.3;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     font-size: 24px;
   }
 `;
@@ -54,7 +54,7 @@ const Line3 = styled.h2`
     letter-spacing: 0.5px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     font-size: 24px;
   }
 `;

@@ -42,3 +42,4 @@ src/images/**/*.mov
 node_modules/.cache/
 .cache/
 .vercel
+.env*.local

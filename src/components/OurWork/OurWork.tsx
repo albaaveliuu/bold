@@ -6,7 +6,7 @@ const OurWorkSection = styled.section`
   background: #1E1E1E;
   padding: 180px 0;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     padding: 100px 0;
   }
 `;
@@ -16,7 +16,7 @@ const Container = styled.div`
   margin: 0 auto;
   padding: 0 40px;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     padding: 0 20px;
   }
 `;
@@ -32,7 +32,7 @@ const Title = styled.h2`
   letter-spacing: -2px;
   margin-left: 140px;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     font-size: 60px;
     margin-bottom: 60px;
     margin-left: 20px;
@@ -53,7 +53,7 @@ const ProjectsGrid = styled.div`
   margin-left: auto;
   margin-right: auto;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     grid-template-columns: 1fr;
     margin-bottom: 60px;
     gap: 15px;
@@ -83,7 +83,7 @@ const ProjectBox = styled(motion.a)`
     transform: scale(1.05);
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     aspect-ratio: 1;
   }
 `;
@@ -94,7 +94,7 @@ const VideoContainer = styled.div`
   margin: 0 auto;
   padding: 0 40px;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     padding: 0 20px;
     max-width: 100%;
   }

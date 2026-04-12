@@ -5,9 +5,17 @@ import { motion } from 'framer-motion';
 const TeamSection = styled.section`
   background: #1E1E1E;
   padding: 180px 0;
+  padding-left: env(safe-area-inset-left, 0);
+  padding-right: env(safe-area-inset-right, 0);
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
   
-  @media (max-width: 768px) {
-    padding: 100px 0;
+  @media (max-width: 1024px) {
+    padding-top: max(72px, env(safe-area-inset-top, 0px));
+    padding-bottom: max(88px, env(safe-area-inset-bottom, 0px));
+    padding-left: env(safe-area-inset-left, 0);
+    padding-right: env(safe-area-inset-right, 0);
   }
 `;
 
@@ -15,9 +23,12 @@ const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px;
+  width: 100%;
+  box-sizing: border-box;
   
-  @media (max-width: 768px) {
-    padding: 0 20px;
+  @media (max-width: 1024px) {
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
   }
 `;
 
@@ -32,15 +43,15 @@ const Title = styled.h2`
   letter-spacing: -2px;
   margin-left: 40px;
   
-  @media (max-width: 768px) {
-    font-size: 60px;
-    margin-bottom: 60px;
-    margin-left: 20px;
+  @media (max-width: 1024px) {
+    font-size: clamp(36px, 10vw, 52px);
+    margin-bottom: 40px;
+    margin-left: 0;
+    letter-spacing: -1px;
   }
   
   @media (max-width: 480px) {
-    font-size: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
   }
 `;
 
@@ -51,8 +62,11 @@ const TeamGrid = styled.div`
   margin-left: 50px;
   margin-right: 10px;
   
-  @media (max-width: 768px) {
-    gap: 60px;
+  @media (max-width: 1024px) {
+    gap: 48px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
 `;
 
@@ -60,10 +74,14 @@ const TeamMember = styled(motion.div)`
   display: flex;
   gap: 60px;
   align-items: flex-start;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
+    align-items: stretch;
   }
 `;
 
@@ -79,10 +97,20 @@ const MemberImage = styled.div<MemberImageProps>`
   background: ${props => props.isRed ? '#E01212' : 'transparent'};
   cursor: pointer;
   transition: transform 0.3s ease;
+  max-width: 100%;
+  box-sizing: border-box;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 100%;
-    height: 300px;
+    max-width: 360px;
+    height: auto;
+    aspect-ratio: 1;
+    margin: 0 auto;
+    align-self: center;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 100%;
   }
   
   &:hover {
@@ -94,6 +122,7 @@ const MemberImage = styled.div<MemberImageProps>`
     height: 100%;
     object-fit: cover;
     filter: grayscale(100%);
+    display: block;
   }
 `;
 
@@ -101,9 +130,11 @@ const MemberInfo = styled.div`
   color: #FFFFFF;
   flex: 1;
   padding-top: 30px;
+  min-width: 0;
   
-  @media (max-width: 768px) {
-    padding-top: 20px;
+  @media (max-width: 1024px) {
+    padding-top: 4px;
+    width: 100%;
   }
 `;
 
@@ -112,13 +143,11 @@ const MemberName = styled.h3`
   font-weight: 600;
   font-family: 'Syne', sans-serif;
   margin-bottom: 8px;
+  word-wrap: break-word;
   
-  @media (max-width: 768px) {
-    font-size: 32px;
-  }
-  
-  @media (max-width: 480px) {
-    font-size: 28px;
+  @media (max-width: 1024px) {
+    font-size: clamp(24px, 6.5vw, 32px);
+    line-height: 1.15;
   }
 `;
 
@@ -127,24 +156,26 @@ const MemberRole = styled.p`
   opacity: 0.8;
   font-family: 'Hando', sans-serif;
   margin-bottom: 20px;
+  line-height: 1.3;
   
-  @media (max-width: 768px) {
-    font-size: 20px;
-    margin-bottom: 15px;
+  @media (max-width: 1024px) {
+    font-size: clamp(16px, 4vw, 20px);
+    margin-bottom: 12px;
   }
 `;
 
 const MemberDescription = styled.p`
   font-size: 20px;
-  line-height: 1.5;
+  line-height: 1.55;
   opacity: 0.7;
   font-family: 'Hando', sans-serif;
   margin-bottom: 25px;
   max-width: 570px;
   
-  @media (max-width: 768px) {
-    font-size: 16px;
-    margin-bottom: 15px;
+  @media (max-width: 1024px) {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 18px;
     max-width: 100%;
   }
 `;
@@ -155,9 +186,14 @@ const BottomRow = styled.div`
   align-items: center;
   width: 100%;
   max-width: 600px;
+  flex-wrap: wrap;
+  gap: 12px;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     max-width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
   }
 `;
 
@@ -185,11 +221,18 @@ const SocialLink = styled.a`
 `;
 
 const Signature = styled.img`
-  height: 70px;
   opacity: 0.8;
-  
-  @media (max-width: 768px) {
-    height: 50px;
+  max-height: 70px;
+  max-width: min(220px, 55vw);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  align-self: flex-end;
+
+  @media (max-width: 1024px) {
+    max-height: 52px;
+    max-width: min(180px, 48vw);
+    align-self: flex-start;
   }
 `;
 

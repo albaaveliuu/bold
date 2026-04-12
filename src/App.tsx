@@ -27,12 +27,25 @@ const globalStyles = css`
   html {
     scroll-behavior: smooth;
     background: #1E1E1E;
+    width: 100%;
+    overflow-x: hidden;
   }
 
   body {
     font-family: 'Syne', sans-serif;
     background: #1E1E1E;
     color: #FFFFFF;
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    min-height: 100%;
+    /* Safe-area on body caused uneven gutters in some mobile emulators; use per-component insets instead */
+  }
+
+  #root {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100%;
     overflow-x: hidden;
   }
 

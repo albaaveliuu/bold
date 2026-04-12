@@ -7,7 +7,7 @@ const AboutSection = styled.section`
   padding: 120px 0;
   color: #FFFFFF;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     padding: 80px 0;
   }
 `;
@@ -21,7 +21,7 @@ const Container = styled.div`
   align-items: flex-start;
   gap: 60px;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
     padding: 0 20px;
     gap: 40px;
@@ -32,9 +32,12 @@ const Content = styled.div`
   flex: 1;
   max-width: 600px;
   margin-left: 40px;
+  width: 100%;
+  min-width: 0;
   
-  @media (max-width: 768px) {
-    margin-left: 20px;
+  @media (max-width: 1024px) {
+    margin-left: 0;
+    max-width: 100%;
   }
 `;
 
@@ -48,9 +51,10 @@ const Title = styled.h2`
   letter-spacing: -2px;
   white-space: nowrap;
   
-  @media (max-width: 768px) {
-    font-size: 60px;
+  @media (max-width: 1024px) {
+    font-size: clamp(36px, 7vw, 72px);
     margin-bottom: 30px;
+    white-space: normal;
   }
   
   @media (max-width: 480px) {
@@ -74,8 +78,8 @@ const Description = styled.p`
     margin-bottom: 30px;
   }
   
-  @media (max-width: 768px) {
-    font-size: 16px;
+  @media (max-width: 1024px) {
+    font-size: clamp(15px, 0.35rem + 1.4vw, 18px);
     margin-bottom: 15px;
     max-width: 100%;
     
@@ -93,7 +97,7 @@ const LocationText = styled.span`
 const LastDescription = styled(Description)`
   max-width: 1100px;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     max-width: 100%;
   }
 `;
@@ -108,7 +112,7 @@ const Slogan = styled.div`
   width: 100%;
   max-width: 400px;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     max-width: 100%;
   }
   
@@ -129,7 +133,7 @@ const ImageContainer = styled(motion.div)`
   perspective: 1000px;
   margin-top: 0;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 100%;
     margin-top: 0;
   }

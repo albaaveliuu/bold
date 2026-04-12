@@ -11,10 +11,20 @@ const NavbarContainer = styled(motion.nav)`
   right: 0;
   z-index: 1000;
   padding: 20px 60px;
+  padding-top: max(20px, env(safe-area-inset-top, 0px));
+  padding-left: max(60px, env(safe-area-inset-left, 0px));
+  padding-right: max(60px, env(safe-area-inset-right, 0px));
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: rgba(0, 0, 0, 0.9);
+
+  @media (max-width: 1024px) {
+    padding: 16px 20px;
+    padding-top: max(16px, env(safe-area-inset-top, 0px));
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
 `;
 
 const NavGroup = styled.div`
@@ -31,7 +41,7 @@ const NavGroup = styled.div`
     justify-content: flex-end;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 `;
@@ -49,7 +59,7 @@ const Logo = styled.img`
     opacity: 0.8;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     position: relative;
     left: 0;
     transform: none;
@@ -82,7 +92,7 @@ const MobileMenuButton = styled.button`
   z-index: 1002;
   position: relative;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     display: block;
   }
 `;

@@ -8,7 +8,7 @@ const ProjectDetailContainer = styled.div`
   min-height: 100vh;
   background: #1E1E1E;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     padding: 100px 20px 60px;
   }
 `;

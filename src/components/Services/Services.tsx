@@ -20,7 +20,7 @@ const Container = styled.div`
   margin: 0 auto;
   padding: 0 40px;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     padding: 0 20px;
   }
 `;
@@ -35,7 +35,7 @@ const SectionTitleContainer = styled.div`
   margin-bottom: 60px;
   justify-content: flex-start;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     padding: 0 20px;
   }
 `;
@@ -51,7 +51,7 @@ const Title = styled.h2`
   letter-spacing: -2px;
   margin-left: 40px;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     font-size: 60px;
     margin-bottom: 60px;
     margin-left: 20px;
@@ -72,7 +72,7 @@ const ServicesGrid = styled.div`
   padding: 0 40px;
   margin-left: 10px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     margin-left: 0;
     padding: 0 20px;
     gap: 40px;
@@ -91,7 +91,7 @@ const ServiceItem = styled.div`
   overflow: hidden;
   max-width: 1400px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     height: auto;
     min-height: 500px;
     grid-template-columns: 1fr;
@@ -106,7 +106,7 @@ const ServiceImageContainer = styled.div`
   position: relative;
   overflow: hidden;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 100%;
     height: 250px;
   }
@@ -131,7 +131,7 @@ const ServiceContent = styled.div`
   padding-top: 40px;
   width: 100%;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     margin-left: 0;
     padding: 20px;
     justify-content: flex-start;
@@ -158,7 +158,7 @@ const ServiceTitle = styled.h3`
   position: relative;
   z-index: 3;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     font-size: 36px;
     margin-bottom: 15px;
     line-height: 1;
@@ -178,7 +178,7 @@ const ServiceDescription = styled.p`
   padding-right: 40px;
   font-family: 'Hando', sans-serif;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     font-size: 16px;
     max-width: 100%;
     padding-left: 0;

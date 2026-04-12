@@ -5,16 +5,21 @@ import headerImage from '../../images/header.png';
 
 const PopupOverlay = styled(motion.div)`
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  min-height: -webkit-fill-available;
   background: rgba(0, 0, 0, 0.95);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
-  padding: 20px;
+  z-index: 1100;
+  box-sizing: border-box;
+  padding: max(20px, env(safe-area-inset-top, 0px))
+    max(20px, env(safe-area-inset-right, 0px))
+    max(20px, env(safe-area-inset-bottom, 0px))
+    max(20px, env(safe-area-inset-left, 0px));
 `;
 
 const PopupContainer = styled(motion.div)`
@@ -35,6 +40,10 @@ const ImageSection = styled.div`
   background-size: cover;
   background-position: center;
   position: relative;
+
+  @media (max-width: 1024px) {
+    height: min(220px, 35vh);
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -46,15 +55,15 @@ const ContentWrapper = styled.div`
   padding: 32px;
   background: white;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     padding: 24px 20px;
   }
 `;
 
 const CloseButton = styled.button`
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: max(16px, env(safe-area-inset-top, 0px));
+  right: max(16px, env(safe-area-inset-right, 0px));
   background: none;
   border: none;
   color: #E01212;
