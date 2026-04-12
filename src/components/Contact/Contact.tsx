@@ -235,7 +235,7 @@ interface ContactState {
   formData: {
     name: string;
     company: string;
-    subject: string;
+    email: string;
     phone: string;
     message: string;
   };
@@ -251,7 +251,7 @@ class Contact extends React.Component<{}, ContactState> {
       formData: {
         name: '',
         company: '',
-        subject: '',
+        email: '',
         phone: '',
         message: ''
       },
@@ -333,12 +333,12 @@ class Contact extends React.Component<{}, ContactState> {
               </InputRow>
               <InputRow>
                 <Input 
-                  type="text" 
-                  name="subject"
-                  placeholder="Subject" 
+                  type="email" 
+                  name="email"
+                  placeholder="Email" 
                   required
                   disabled={isSubmitting}
-                  value={formData.subject}
+                  value={formData.email}
                   onChange={this.handleChange}
                 />
                 <Input 

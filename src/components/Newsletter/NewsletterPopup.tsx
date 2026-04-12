@@ -53,25 +53,25 @@ const ContentWrapper = styled.div`
 
 const CloseButton = styled.button`
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 16px;
+  right: 16px;
   background: none;
   border: none;
-  color: #FFFFFF;
-  font-size: 24px;
+  color: #E01212;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1;
+  font-family: 'Syne', sans-serif;
   cursor: pointer;
-  padding: 0;
-  width: 24px;
-  height: 24px;
+  padding: 4px 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.2s ease;
   z-index: 2;
-  
+
   &:hover {
-    opacity: 1;
+    opacity: 0.85;
   }
 `;
 

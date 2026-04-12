@@ -246,6 +246,14 @@ const Team: React.FC = () => {
       behance: 'https://www.behance.net/nderimahmeti'
     },
     {
+      name: 'Diora Binxhiu',
+      role: 'Marketing Strategy Consultant',
+      description: 'Marketing strategist & trainer with 10+ years driving global brand growth. Former CEO & co-founder of Kosovo\'s first Green Marketing Agency, trained 100+ professionals, championed women owned businesses. MSc in Strategic Digital Marketing in England, currently a Client Success Expert in Content Solutions.',
+      image: require('../../images/diorabinxhiuu.png'),
+      signature: require('../../images/diorasignature.png'),
+      linkedin: 'https://www.linkedin.com/in/diorabinxhiu/'
+    },
+    {
       name: 'Diana Voca',
       role: 'Social Media Manager & Concept Writer',
       description: 'From driving the creative process to crafting captions, content calendars, and growth strategies, Diana leads photo and video shoots, brings bold ideas to life, and writes copy that connects. Her work blends strategy, creativity, and storytelling to build a strong, authentic digital presence for brands.',
@@ -259,7 +267,7 @@ const Team: React.FC = () => {
   return (
     <TeamSection id="team">
       <Container>
-        <Title>FOUNDING<br />TEAM</Title>
+        <Title>OUR TEAM</Title>
         <TeamGrid>
           {teamMembers.map((member, index) => (
             <TeamMember

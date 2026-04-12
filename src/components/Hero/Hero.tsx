@@ -26,6 +26,21 @@ import headerImage16 from '../../images/header/Artboard16.png';
 import headerImage17 from '../../images/header/Artboard17.png';
 import headerImage19 from '../../images/header/Artboard19.png';
 
+/** Mobile: skip scroll-triggered opacity so all three slogan lines stay visible */
+function useIsMobileSlogan() {
+  const [isMobile, setIsMobile] = useState(() =>
+    typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches
+  );
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 768px)');
+    const sync = () => setIsMobile(mq.matches);
+    sync();
+    mq.addEventListener('change', sync);
+    return () => mq.removeEventListener('change', sync);
+  }, []);
+  return isMobile;
+}
+
 const HeroSection = styled.section`
   height: 100vh;
   width: 100%;
@@ -152,8 +167,10 @@ const SloganSection = styled.section`
 
   @media (max-width: 768px) {
     height: auto;
-    padding: 20px;
+    min-height: min-content;
+    padding: 36px 16px 72px;
     margin: 40px 0;
+    overflow: visible;
   }
 `;
 
@@ -181,9 +198,13 @@ const SloganText = styled(motion.div)`
   gap: 10px;
 
   @media (max-width: 768px) {
-    gap: 5px;
+    gap: 10px;
     text-align: center;
-    align-items: center;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    padding-bottom: 16px;
+    overflow: visible;
   }
 `;
 
@@ -204,18 +225,22 @@ const Word = styled(motion.span)`
 
   @media (max-width: 768px) {
     font-size: 13px;
-    margin-right: 2px;
+    margin-right: 3px;
+    line-height: 1.4;
 
     &.bold {
-      font-size: 16px;
+      font-size: 13px;
+      font-weight: 700;
     }
   }
 
   @media (max-width: 480px) {
-    font-size: 10px;
+    font-size: 12px;
+    margin-right: 2px;
 
     &.bold {
       font-size: 12px;
+      font-weight: 700;
     }
   }
 `;
@@ -232,21 +257,34 @@ const TextLine = styled(motion.div)`
 
   &:first-of-type {
     margin-bottom: 0;
-    
+
     ${Word} {
       font-size: 27px;
       font-weight: 400;
+
+      @media (max-width: 768px) {
+        font-size: 13px;
+        font-weight: 400;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 12px;
+      }
     }
   }
 
   @media (max-width: 768px) {
-    font-size: 28px;
-    line-height: 1;
-    gap: 4px;
-    margin-bottom: 2px;
+    font-size: 13px;
+    line-height: 1.4;
+    gap: 6px;
+    margin-bottom: 6px;
     justify-content: center;
     text-align: center;
     width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 12px;
   }
 `;
 
@@ -293,6 +331,7 @@ interface WordType {
 }
 
 const Hero: React.FC = () => {
+  const isMobileSlogan = useIsMobileSlogan();
   const { scrollY } = useScroll();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [buttonVisible, setButtonVisible] = useState(true);
@@ -459,6 +498,13 @@ const Hero: React.FC = () => {
     { text: "IGNORE.", delay: 0.95, highlight: true }
   ];
 
+  /** Looser viewport so the third line still animates in on small screens */
+  const sloganWordViewport = {
+    once: true,
+    amount: 0.05,
+    margin: '0px 0px 200px 0px',
+  };
+
   const wordVariants = {
     hidden: { 
       y: 50,
@@ -472,6 +518,12 @@ const Hero: React.FC = () => {
         ease: [0.43, 0.13, 0.23, 0.96]
       }
     }
+  };
+
+  /** Mobile: no fade-in-from-scroll — all lines visible immediately */
+  const wordVariantsMobileStatic = {
+    hidden: { opacity: 1, y: 0 },
+    visible: { opacity: 1, y: 0 }
   };
 
   const letterVariants = {
@@ -535,10 +587,10 @@ const Hero: React.FC = () => {
             {lineOne.map((word, index) => (
               <Word
                 key={index}
-                variants={wordVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
+                variants={isMobileSlogan ? wordVariantsMobileStatic : wordVariants}
+                initial={isMobileSlogan ? 'visible' : 'hidden'}
+                whileInView={isMobileSlogan ? undefined : 'visible'}
+                viewport={isMobileSlogan ? undefined : sloganWordViewport}
                 transition={{ delay: word.delay }}
               >
                 {word.text}
@@ -549,10 +601,10 @@ const Hero: React.FC = () => {
             {lineTwo.map((word, index) => (
               <Word
                 key={index}
-                variants={wordVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
+                variants={isMobileSlogan ? wordVariantsMobileStatic : wordVariants}
+                initial={isMobileSlogan ? 'visible' : 'hidden'}
+                whileInView={isMobileSlogan ? undefined : 'visible'}
+                viewport={isMobileSlogan ? undefined : sloganWordViewport}
                 transition={{ delay: word.delay }}
               >
                 {word.text}
@@ -563,10 +615,10 @@ const Hero: React.FC = () => {
             {lineThree.map((word, index) => (
               <Word
                 key={index}
-                variants={wordVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
+                variants={isMobileSlogan ? wordVariantsMobileStatic : wordVariants}
+                initial={isMobileSlogan ? 'visible' : 'hidden'}
+                whileInView={isMobileSlogan ? undefined : 'visible'}
+                viewport={isMobileSlogan ? undefined : sloganWordViewport}
                 transition={{ delay: word.delay }}
                 className={word.highlight ? 'bold' : ''}
               >
